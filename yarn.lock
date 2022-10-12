@@ -1908,9 +1908,9 @@
     picomatch "^2.2.2"
 
 "@sinclair/typebox@^0.24.1":
-  version "0.24.44"
-  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.44.tgz#0a0aa3bf4a155a678418527342a3ee84bd8caa5c"
-  integrity sha512-ka0W0KN5i6LfrSocduwliMMpqVgohtPFidKdMEOUjoOFCHcOOYkKsPRxfs5f15oPNHTm6ERAm0GV/+/LTKeiWg==
+  version "0.24.46"
+  resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.24.46.tgz#57501b58023776dbbae9e25619146286440be34c"
+  integrity sha512-ng4ut1z2MCBhK/NwDVwIQp3pAUOCs/KNaW3cBxdFB2xTDrOuo1xuNmpr/9HHFhxqIvHrs1NTH3KJg6q+JSy1Kw==
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
@@ -5286,9 +5286,9 @@ ejs@^2.6.1:
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
 electron-to-chromium@^1.3.564, electron-to-chromium@^1.4.251:
-  version "1.4.276"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.276.tgz#17837b19dafcc43aba885c4689358b298c19b520"
-  integrity sha512-EpuHPqu8YhonqLBXHoU6hDJCD98FCe6KDoet3/gY1qsQ6usjJoHqBH2YIVs8FXaAtHwVL8Uqa/fsYao/vq9VWQ==
+  version "1.4.279"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.279.tgz#84267fec806a8b1c5a1daebf726c4e296e5bcdf9"
+  integrity sha512-xs7vEuSZ84+JsHSTFqqG0TE3i8EAivHomRQZhhcRvsmnjsh5C2KdhwNKf4ZRYtzq75wojpFyqb62m32Oam57wA==
 
 elliptic@^6.5.3:
   version "6.5.4"
@@ -12300,9 +12300,9 @@ swagger-ui-dist@4.14.0:
   integrity sha512-TBzhheU15s+o54Cgk9qxuYcZMiqSm/SkvKnapoGHOF66kz0Y5aGjpzj5BT/vpBbn6rTPJ9tUYXQxuDWfsjiGMw==
 
 swagger-ui-dist@>=4.11.0:
-  version "4.14.2"
-  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.14.2.tgz#fbcacc7efae64c94f7335810d7ee8f93b6c65400"
-  integrity sha512-kOIU7Ts3TrXDLb3/c9jRe4qGp8O3bRT19FFJA8wJfrRFkcK/4atPn3krhtBVJ57ZkNNofworXHxuYwmaisXBdg==
+  version "4.14.3"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.14.3.tgz#02aeaf61ec35aa85a4ed17f4b6b7417c00526c1f"
+  integrity sha512-Y7Sta24I9r+G6dX3ZTIq9Psr55cDC3myCB0E00ZnVkB0Wn3cO77NdLXSM0f90WZh9VpgTetKpMPR3n2VqKr+lQ==
 
 swagger-ui-express@^4.5.0:
   version "4.5.0"
