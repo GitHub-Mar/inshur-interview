@@ -3,11 +3,10 @@ import { AppController } from './app.controller';
 import { PrismaService } from './prisma.service';
 import { UserService } from './user.service';
 import { ReviewService } from './review.service';
-import { ModuleMocker, MockFunctionMetadata } from 'jest-mock';
+import { ModuleMocker } from 'jest-mock';
 import { User, Review } from '@prisma/client';
-import exp from 'constants';
-import { reverse } from 'dns';
 import { CreateReviewDto } from './dto/CreateReviewDto';
+import { CreateUserDto } from './dto/CreateUserDto';
 
 const moduleMocker = new ModuleMocker(global);
 
@@ -64,6 +63,30 @@ describe('AppController unit tests', () => {
             expect(result[0]).toEqual(mockUsers[0]);
         });
 
+        it('createUser returns value from the service', async () => {
+            const dto: CreateUserDto = {
+                username: 'testUser',
+                firstName: 'Test',
+                lastName: 'User',
+                emailAddress: 'testuser@test.com'
+            };
+
+            const mockUser: User =
+            {
+                id: 1,
+                username: dto.username,
+                firstName: dto.firstName,
+                lastName: dto.lastName,
+                emailAddress: dto.emailAddress
+            };
+
+            jest.spyOn(userService, 'createUser').mockImplementationOnce(() => Promise.resolve(mockUser));
+
+            const result = await appController.createUser(dto);
+            expect(userService.createUser).toBeCalledTimes(1);
+            expect(result).toEqual(mockUser);
+        });
+
         it('getReview returns value from the service', async () => {
             const mockReview: Review =
             {
@@ -78,7 +101,7 @@ describe('AppController unit tests', () => {
             jest.spyOn(reviewService, 'review').mockImplementationOnce(() => Promise.resolve(mockReview));
 
             const result = await appController.getReview(1);
-            expect(userService.user).toBeCalledTimes(1);
+            expect(reviewService.review).toBeCalledTimes(1);
             expect(result).toEqual(mockReview);
         });
 
