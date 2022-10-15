@@ -6,6 +6,14 @@ import { Review, Prisma } from '@prisma/client';
 export class ReviewService {
     constructor(private prisma: PrismaService) { }
 
+    async review(
+        reviewWhereInput: Prisma.ReviewWhereUniqueInput,
+    ): Promise<Review | null> {
+        return this.prisma.review.findUnique({
+            where: reviewWhereInput,
+        });
+    }
+
     async reviews(params: {
         skip?: number;
         take?: number;
