@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { ReviewModel } from "./models/ReviewModel";
 import { UserModel } from "./models/UserModel";
 import { Reviews } from "./components/reviews/Reviews";
-import logo from "./logo.svg";
 import axios from "axios";
 import "./App.css";
+import { userData } from "./data/user";
+import { reviewData } from "./data/reviews";
 
 function App() {
   const userId: number = 1;
@@ -13,9 +14,10 @@ function App() {
 
   useEffect(() => {
     async function fetchReviews(userId: number) {
-      const { data } = await axios.get(
-        `http://localhost:4000/reviews/${userId}`
-      );
+      const data = reviewData;
+      // const { data } = await axios.get(
+      //   `http://localhost:4000/reviews/${userId}`
+      // );
       setReviews(data);
     }
     fetchReviews(userId);
@@ -23,7 +25,8 @@ function App() {
 
   useEffect(() => {
     async function fetchUser(userId: number) {
-      const { data } = await axios.get(`http://localhost:4000/user/${userId}`);
+      const data = userData;
+      // const { data } = await axios.get(`http://localhost:4000/user/${userId}`);
       setUser(data);
     }
     fetchUser(userId);
@@ -31,21 +34,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Interview presentation</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My profile
-        </a>
-        <h3>
-          {user?.firstName} {user?.lastName}
-        </h3>
-      </header>
+      <header className="App-header"></header>
+      <h3>
+        {user?.firstName} {user?.lastName}
+      </h3>
+      <h3>Senior Software Engineer</h3>
+      <img src={"../public/ProfilePicture.jfif"} className="App-logo" />
       <Reviews reviews={reviews} />
     </div>
   );

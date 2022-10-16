@@ -5,9 +5,9 @@ import { ReviewModel } from "../../models/ReviewModel";
 export const Reviews = ({ reviews }: { reviews: ReviewModel[] }) => {
   return (
     <>
-      <h3>What some people have said...</h3>
+      <h3>What others have said</h3>
       {reviews.map((review) => (
-        <Review review={review} />
+        <Review review={review} key={review.id} />
       ))}
     </>
   );
