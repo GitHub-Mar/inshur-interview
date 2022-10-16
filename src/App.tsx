@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     async function fetchReviews(userId: number) {
       const { data } = await axios.get(
-        `http://localhost:3000/reviews/${userId}`
+        `http://localhost:4000/reviews/${userId}`
       );
       setReviews(data);
     }
@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     async function fetchUser(userId: number) {
-      const { data } = await axios.get(`http://localhost:3000/user/${userId}`);
+      const { data } = await axios.get(`http://localhost:4000/user/${userId}`);
       setUser(data);
     }
     fetchUser(userId);

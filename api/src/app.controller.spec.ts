@@ -39,7 +39,7 @@ describe('AppController unit tests', () => {
 
             jest.spyOn(userService, 'user').mockImplementationOnce(() => Promise.resolve(mockUser));
 
-            const result = await appController.getUser(1);
+            const result = await appController.getUser('1');
             expect(userService.user).toBeCalledTimes(1);
             expect(result).toEqual(mockUser);
         });
@@ -100,7 +100,7 @@ describe('AppController unit tests', () => {
 
             jest.spyOn(reviewService, 'review').mockImplementationOnce(() => Promise.resolve(mockReview));
 
-            const result = await appController.getReview(1);
+            const result = await appController.getReview('1');
             expect(reviewService.review).toBeCalledTimes(1);
             expect(result).toEqual(mockReview);
         });
@@ -138,7 +138,7 @@ describe('AppController unit tests', () => {
             ];
 
             jest.spyOn(reviewService, 'reviews').mockImplementationOnce(() => Promise.resolve(mockReviews));
-            const result = await appController.getReviewsByUserId(2);
+            const result = await appController.getReviewsByUserId('2');
 
             expect(reviewService.reviews).toBeCalledTimes(1);
             expect(result).toHaveLength(mockReviews.length);
