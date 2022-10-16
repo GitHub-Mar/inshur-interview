@@ -1,3 +1,10 @@
 .review-container {
-    /* display: flex; */
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    
+}
+
+.review-date {
+    color: darkgray;
 }

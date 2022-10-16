@@ -6,6 +6,7 @@ import axios from "axios";
 import "./App.css";
 import { userData } from "./data/user";
 import { reviewData } from "./data/reviews";
+import eric from "./eric.png";
 
 function App() {
   const userId: number = 1;
@@ -34,13 +35,16 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <h3>
-        {user?.firstName} {user?.lastName}
-      </h3>
-      <h3>Senior Software Engineer</h3>
-      <img src={"../public/ProfilePicture.jfif"} className="App-logo" />
-      <Reviews reviews={reviews} />
+      <div className="profile">
+        <div className="profile-picture">
+          <img src={eric} alt="Profile photo" height={300} width={300} />
+        </div>
+        <h3>
+          Name: {user?.firstName} {user?.lastName}
+        </h3>
+        <h3>Job Title: Senior Software Engineer</h3>
+        <Reviews reviews={reviews} />
+      </div>
     </div>
   );
 }
