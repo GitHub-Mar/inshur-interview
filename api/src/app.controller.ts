@@ -16,8 +16,8 @@ export class AppController {
     constructor(private readonly userService: UserService, private readonly reviewService: ReviewService) { }
 
     @Get('user/:id')
-    async getUser(@Param('id') id: number): Promise<UserModel> {
-        return this.userService.user({ id: id });
+    async getUser(@Param('id') id: string): Promise<UserModel | null> {
+        return this.userService.user({ id: parseInt(id) });
     }
 
     @Get('users/')
@@ -30,16 +30,21 @@ export class AppController {
         return this.userService.createUser(createUserDto);
     }
 
+    @Get('review/:id')
+    async getReview(@Param('id') id: string): Promise<ReviewModel | null> {
+        return this.reviewService.review({ id: parseInt(id) });
+    }
+
     @Get('reviews/')
     async getReviews(): Promise<ReviewModel[]> {
         return this.reviewService.reviews({});
     }
 
     @Get('/reviews/userId:id')
-    async getReviewsByUserId(@Param('userId') id: number): Promise<ReviewModel[]> {
+    async getReviewsByUserId(@Param('userId') id: string): Promise<ReviewModel[]> {
         return this.reviewService.reviews({
             where: {
-                authorId: { equals: id }
+                authorId: { equals: parseInt(id) }
             }
         })
     }
