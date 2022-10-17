@@ -32,12 +32,18 @@ function App() {
   return (
     <div className="App">
       <div className="profile">
-        <div className="profile-picture">
-          <img src={eric} alt="Profile photo" height={300} width={300} />
+        <div className="row">
+          <img
+            className="profile-picture"
+            src={eric}
+            alt="Profile photo"
+            height={150}
+            width={150}
+          />
+          <h3>
+            {user?.firstName} {user?.lastName}
+          </h3>
         </div>
-        <h3>
-          Name: {user?.firstName} {user?.lastName}
-        </h3>
         <h3>Job Title: Senior Software Engineer</h3>
         <h3>Favourite food: Sushi</h3>
         <Reviews reviews={reviews} />
