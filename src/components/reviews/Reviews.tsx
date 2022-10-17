@@ -16,7 +16,7 @@ export const Reviews = ({ userId }: { userId: number }) => {
 
   return (
     <>
-      <h3>What others have said</h3>
+      <h4>What others have said</h4>
       {reviews.map((review) => (
         <Review review={review} key={review.id} />
       ))}

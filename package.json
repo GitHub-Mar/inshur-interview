@@ -15,7 +15,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
-    "@types/jest": "^26.0.20",
+    "@types/jest": "^29.1.2",
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
@@ -23,7 +23,9 @@
     "concurrently": "^6.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-scripts": "5.0.1",
+    "ts-jest": "^29.0.3",
     "typescript": "~4.2.2"
   },
   "scripts": {
@@ -48,7 +50,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "tailwindcss": "^3.1.8"
+  "prisma": {
+    "schema": "./api/prisma/schema.prisma"
   }
 }

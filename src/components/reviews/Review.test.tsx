@@ -16,6 +16,6 @@ describe("Review unit tests", () => {
 
     const { getByText } = render(<Review review={testData} />);
     expect(getByText("Test review")).toBeInTheDocument();
-    expect(getByText("Sat Jan 1 2022")).toBeInTheDocument();
+    expect(getByText("Sat Jan 01 2022")).toBeInTheDocument();
   });
 });

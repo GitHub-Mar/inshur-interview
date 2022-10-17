@@ -1,0 +1,10 @@
+.user-info {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    padding-bottom: 4vmin;
+}
+
+.text-block {
+    padding-left: 10px;
+}
