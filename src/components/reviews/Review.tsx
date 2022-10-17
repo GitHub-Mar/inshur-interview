@@ -1,12 +1,16 @@
 import React from "react";
 import { ReviewModel } from "../../models/ReviewModel";
+import { Rating } from "@mui/material";
+import "./Review.css";
 
 export const Review = ({ review }: { review: ReviewModel }) => {
   return (
-    <div>
+    <div className="flex items-center">
+      <div className="text-gray-600">
+        {new Date(review.createDate).toDateString()}
+      </div>
       <div>{review.text}</div>
-      <div>Created: {review.createDate}</div>
-      <div>{review.text}</div>
+      <Rating value={review.rating} />
     </div>
   );
 };
