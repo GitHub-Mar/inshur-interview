@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios';
 import { ReviewModel } from '../models/ReviewModel';
-import { Review } from '@prisma/client';
 
 export function useReviews(id: number): [loading: boolean, data: ReviewModel[]] {
     const [loading, setLoading] = useState(true);
@@ -9,7 +7,8 @@ export function useReviews(id: number): [loading: boolean, data: ReviewModel[]] 
 
     useEffect(() => {
         async function fetchReviews(id: number) {
-            const { data } = await axios.get(`/reviews/userId/${id}`);
+            const response = await fetch(`/reviews/userId/${id}`);
+            const data = await response.json();
             setReviews(data);
             setLoading(false);
         }

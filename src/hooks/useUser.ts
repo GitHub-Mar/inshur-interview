@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { UserModel } from '../models/UserModel';
 
 export function useUser(id: number): [loading: boolean, user: UserModel | undefined] {
@@ -8,7 +7,8 @@ export function useUser(id: number): [loading: boolean, user: UserModel | undefi
 
     useEffect(() => {
         async function fetchUser(userId: number) {
-            const { data } = await axios.get(`/user/${userId}`);
+            const response = await fetch(`/user/${userId}`);
+            const data = await response.json();
             setUser(data);
             setLoading(false);
         }
