@@ -4,22 +4,12 @@ import { UserModel } from "./models/UserModel";
 import { Reviews } from "./components/reviews/Reviews";
 import axios from "axios";
 import "./App.css";
-import { userData } from "./data/user";
-import { reviewData } from "./data/reviews";
 import eric from "./eric.png";
 
 function App() {
   const userId: number = 1;
-  const [reviews, setReviews] = useState<ReviewModel[]>([]);
   const [user, setUser] = useState<UserModel>();
-
-  useEffect(() => {
-    async function fetchReviews(userId: number) {
-      const { data } = await axios.get(`/reviews/userId/${userId}`);
-      setReviews(data);
-    }
-    fetchReviews(userId);
-  }, [userId]);
+  const [showReviews, setShowReviews] = useState(false);
 
   useEffect(() => {
     async function fetchUser(userId: number) {
@@ -30,7 +20,7 @@ function App() {
   }, [userId]);
 
   return (
-    <div className="App">
+    <div className="App bg-cyan-500">
       <div className="profile">
         <div className="row">
           <img
@@ -46,7 +36,7 @@ function App() {
         </div>
         <h3>Job Title: Senior Software Engineer</h3>
         <h3>Favourite food: Sushi</h3>
-        <Reviews reviews={reviews} />
+        <Reviews userId={userId} />
       </div>
     </div>
   );
