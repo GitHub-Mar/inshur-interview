@@ -19,11 +19,13 @@ export const User = ({ id }: { id: number }) => {
           width={150}
         />
         <div className="text-block">
-          <div>
+          <div className="user-property">
             Name: {user?.firstName} {user?.lastName}
           </div>
-          <div>Title: {user?.jobTitle}</div>
-          <div>Favourite food: {user?.favouriteFood}</div>
+          <div className="user-property">Title: {user?.jobTitle}</div>
+          <div className="user-property">
+            Favourite food: {user?.favouriteFood}
+          </div>
         </div>
       </div>
     </div>

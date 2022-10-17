@@ -1,12 +1,13 @@
 .review-container {
-    column-gap: 30px;    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 300px;
-    padding-right: 300px;
+  column-gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 300px;
+  padding-right: 300px;
+  font-weight: 500;
 }
 
 .review-date {
-    color: gray;
+  color: gray;
 }
