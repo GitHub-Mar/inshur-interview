@@ -17,11 +17,13 @@ describe("User component unit tests", () => {
     lastName: "User",
     emailAddress: "test@test.com",
     username: "testUser",
+    favouriteFood: "Carrot",
+    jobTitle: "test",
   };
 
   it("fetches user data and displays the results", () => {
     mockedAxios.get.mockImplementation(() => Promise.resolve(testUser));
-    const { getByText } = render(<User id={1} />);
+    const { getByText } = render(<User id={userId} />);
 
     expect(getByText("Test User")).toBeInTheDocument();
   });

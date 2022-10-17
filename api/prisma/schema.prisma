@@ -28,6 +28,8 @@ model User {
     firstName       String
     lastName        String
     emailAddress    String
+    jobTitle        String   @default("")
+    favouriteFood   String   @default("")
     reviewsWritten  Review[] @relation("UserReviewed")
     reviewsAuthored Review[] @relation("ReviewAuthor")
 }

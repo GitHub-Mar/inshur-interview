@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { UserModel } from "../../models/UserModel";
-import { FavouriteFood } from "./FavouriteFood";
 import "./User.css";
+import { useGetById } from "../../hooks/useReviews";
 
 export const User = ({ id }: { id: number }) => {
   const [user, setUser] = useState<UserModel>();
+
+  const { loading, data } = useGetById("/user/", id);
 
   useEffect(() => {
     async function fetchUser(userId: number) {
@@ -27,12 +29,12 @@ export const User = ({ id }: { id: number }) => {
         />
         <div className="text-block">
           <div>
-            {user?.firstName} {user?.lastName}
+            Name: {user?.firstName} {user?.lastName}
           </div>
-          <div>Senior Software Engineer</div>
+          <div>Title: {user?.jobTitle}</div>
+          <div>Favourite food: {user?.favouriteFood}</div>
         </div>
       </div>
-      <FavouriteFood />
     </div>
   );
 };
