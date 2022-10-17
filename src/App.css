@@ -1,11 +1,11 @@
 .App {
+  padding-top: 20vh;
   text-align: center;
   background-color: ghostwhite;
   height: 100%;
 }
 
 .profile {
-  margin-top: 20vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,6 @@
   background-color: #2ee59d;
   color: white;
   font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
   font-size: 11px;
   margin: 10px;
   width: 140px;
