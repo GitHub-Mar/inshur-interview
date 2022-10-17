@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import { ReviewModel } from '../models/ReviewModel';
+import { Review } from '@prisma/client';
 
-export const useGetById = (path: string, id: number) => {
+export function useReviews(id: number): [loading: boolean, data: ReviewModel[]] {
     const [loading, setLoading] = useState(true);
-    const [data, setData] = useState({})
+    const [reviews, setReviews] = useState<ReviewModel[]>([]);
 
     useEffect(() => {
-        async function getData(id: number) {
-            const { data } = await axios.get(`${path}${id}`);
-            setData(data);
+        async function fetchReviews(id: number) {
+            const { data } = await axios.get(`/reviews/userId/${id}`);
+            setReviews(data);
             setLoading(false);
         }
-        getData(id);
+        fetchReviews(id);
     });
 
-    return { data, loading };
+    return [loading, reviews];
 }

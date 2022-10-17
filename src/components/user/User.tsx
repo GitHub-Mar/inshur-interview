@@ -1,21 +1,12 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { UserModel } from "../../models/UserModel";
 import "./User.css";
-import { useGetById } from "../../hooks/useReviews";
+import { useUser } from "../../hooks/useUser";
 
 export const User = ({ id }: { id: number }) => {
-  const [user, setUser] = useState<UserModel>();
+  const [loading, user] = useUser(id);
 
-  const { loading, data } = useGetById("/user/", id);
-
-  useEffect(() => {
-    async function fetchUser(userId: number) {
-      const { data } = await axios.get(`/user/${userId}`);
-      setUser(data);
-    }
-    fetchUser(id);
-  }, [id]);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="profile">

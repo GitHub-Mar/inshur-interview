@@ -2,12 +2,10 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { User } from "./User";
 import { UserModel } from "../../models/UserModel";
-import { NullLiteral } from "typescript";
-import axios from "axios";
-import { requirePropFactory } from "@mui/material";
+import { useUser } from "../../hooks/useUser";
 
-jest.mock("axios");
-const mockedAxios = axios as jest.Mocked<typeof axios>;
+jest.mock("../../hooks/useUser");
+// const mockedUseUser = useUser as jest.Mocked<>;
 
 describe("User component unit tests", () => {
   const userId: number = 1;
@@ -22,7 +20,6 @@ describe("User component unit tests", () => {
   };
 
   it("fetches user data and displays the results", () => {
-    mockedAxios.get.mockImplementation(() => Promise.resolve(testUser));
     const { getByText } = render(<User id={userId} />);
 
     expect(getByText("Test User")).toBeInTheDocument();

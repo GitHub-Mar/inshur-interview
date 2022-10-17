@@ -17,5 +17,12 @@
 }
 
 .review-toggle-button {
+  font-weight: 600;
+  line-height: 1;
+  font-size: large;
   margin-top: 10px;
+  border-radius: 2px;
+  background-color: lightblue;
+  color:white;
+  border: transparent;
 }
