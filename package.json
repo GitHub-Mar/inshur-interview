@@ -50,5 +50,8 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.1.8"
+  },
+  "prisma": {
+    "schema": "./api/prisma/schema.prisma"
   }
 }
