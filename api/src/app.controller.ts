@@ -42,6 +42,7 @@ export class AppController {
 
     @Get('/reviews/userId:id')
     async getReviewsByUserId(@Param('userId') id: string): Promise<ReviewModel[]> {
+        debugger;
         return this.reviewService.reviews({
             where: {
                 authorId: { equals: parseInt(id) }

@@ -16,22 +16,20 @@ function App() {
   useEffect(() => {
     async function fetchReviews(userId: number) {
       const data = reviewData;
-      // const { data } = await axios.get(
-      //   `http://localhost:4000/reviews/${userId}`
-      // );
+      const response = await axios.get(`/reviews/userId${userId}`);
+      debugger;
       setReviews(data);
     }
     fetchReviews(userId);
-  });
+  }, [userId]);
 
   useEffect(() => {
     async function fetchUser(userId: number) {
-      const data = userData;
-      // const { data } = await axios.get(`http://localhost:4000/user/${userId}`);
+      const { data } = await axios.get(`/user/${userId}`);
       setUser(data);
     }
     fetchUser(userId);
-  });
+  }, [userId]);
 
   return (
     <div className="App">
@@ -43,6 +41,7 @@ function App() {
           Name: {user?.firstName} {user?.lastName}
         </h3>
         <h3>Job Title: Senior Software Engineer</h3>
+        <h3>Favourite food: Sushi</h3>
         <Reviews reviews={reviews} />
       </div>
     </div>

@@ -5,8 +5,8 @@ import "./Review.css";
 
 export const Review = ({ review }: { review: ReviewModel }) => {
   return (
-    <div className="review-container">
-      <div className="review-date">{review.createDate.toDateString()}</div>
+    <div className="flex items-center">
+      <div className="text-gray-600">{review.createDate.toDateString()}</div>
       <div>{review.text}</div>
       <Rating value={review.rating} />
     </div>
