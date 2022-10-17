@@ -6,7 +6,7 @@ export const FavouriteFood = ({}) => {
   const imageWidth: number = 100;
   return (
     <>
-      <h3>Favourite food(s)</h3>
+      <p>Favourite food(s)</p>
       <Carousel>
         <img src="assets/laksa.png" height={imageHeight} width={imageWidth} />
         <img src="assets/sushi.png" height={imageHeight} width={imageWidth} />

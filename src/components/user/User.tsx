@@ -25,10 +25,12 @@ export const User = ({ id }: { id: number }) => {
           height={150}
           width={150}
         />
-        <p>
-          {user?.firstName} {user?.lastName}
-          <p>Senior Software Engineer</p>
-        </p>
+        <div>
+          <div>
+            {user?.firstName} {user?.lastName}
+          </div>
+          <div>Senior Software Engineer</div>
+        </div>
       </div>
       <div className="job-title"></div>
       <FavouriteFood />
