@@ -25,14 +25,13 @@ export const User = ({ id }: { id: number }) => {
           height={150}
           width={150}
         />
-        <div>
+        <div className="text-block">
           <div>
             {user?.firstName} {user?.lastName}
           </div>
           <div>Senior Software Engineer</div>
         </div>
       </div>
-      <div className="job-title"></div>
       <FavouriteFood />
     </div>
   );
