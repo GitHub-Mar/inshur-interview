@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     async function fetchReviews(userId: number) {
       const data = reviewData;
-      const response = await axios.get(`/reviews/userId${userId}`);
+      const response = await axios.get(`/reviews/userId/${userId}`);
       debugger;
       setReviews(data);
     }

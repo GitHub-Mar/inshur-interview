@@ -40,8 +40,8 @@ export class AppController {
         return this.reviewService.reviews({});
     }
 
-    @Get('/reviews/userId:id')
-    async getReviewsByUserId(@Param('userId') id: string): Promise<ReviewModel[]> {
+    @Get('/reviews/userId/:id')
+    async getReviewsByUserId(@Param('id') id: string): Promise<ReviewModel[]> {
         debugger;
         return this.reviewService.reviews({
             where: {
