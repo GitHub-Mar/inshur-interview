@@ -24,8 +24,7 @@
     "incremental": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
-    "strictBindCallApply": false,
+    "strictBindCallApply": false
   },
   "include": ["src"]
 }
-

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { ReviewModel } from '../models/ReviewModel';
 import axios from 'axios';
 
@@ -8,7 +8,7 @@ export function useReviews(id: number): [loading: boolean, data: ReviewModel[]] 
 
     useEffect(() => {
         async function fetchReviews(id: number) {
-            const { data } = await axios.get(`/reviews/userId/${id}`);
+            const { data } = await axios.get(`/api/reviews/userId/${id}`);
             setReviews(data);
             setLoading(false);
         }

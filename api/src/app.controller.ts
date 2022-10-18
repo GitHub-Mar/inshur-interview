@@ -15,32 +15,32 @@ import { CreateUserDto } from './dto/CreateUserDto';
 export class AppController {
     constructor(private readonly userService: UserService, private readonly reviewService: ReviewService) { }
 
-    @Get('user/:id')
+    @Get('api/user/:id')
     async getUser(@Param('id') id: string): Promise<UserModel | null> {
         return this.userService.user({ id: parseInt(id) });
     }
 
-    @Get('users/')
+    @Get('api/users/')
     async getUsers(): Promise<UserModel[]> {
         return this.userService.users({});
     }
 
-    @Post('user')
+    @Post('api/user')
     async createUser(@Body() createUserDto: CreateUserDto): Promise<UserModel> {
         return this.userService.createUser(createUserDto);
     }
 
-    @Get('review/:id')
+    @Get('api/review/:id')
     async getReview(@Param('id') id: string): Promise<ReviewModel | null> {
         return this.reviewService.review({ id: parseInt(id) });
     }
 
-    @Get('reviews/')
+    @Get('api/reviews/')
     async getReviews(): Promise<ReviewModel[]> {
         return this.reviewService.reviews({});
     }
 
-    @Get('/reviews/userId/:id')
+    @Get('api/reviews/userId/:id')
     async getReviewsByUserId(@Param('id') id: string): Promise<ReviewModel[]> {
         return this.reviewService.reviews({
             where: {
@@ -49,7 +49,7 @@ export class AppController {
         })
     }
 
-    @Post('review')
+    @Post('api/review')
     async createReview(@Body() reviewDto: CreateReviewDto): Promise<ReviewModel> {
         const { text, rating, userId, authorId, createDate } = reviewDto;
         return this.reviewService.createReview({
