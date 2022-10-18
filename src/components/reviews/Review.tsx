@@ -5,7 +5,7 @@ import "./Review.css";
 
 export const Review = ({ review }: { review: ReviewModel }) => {
   return (
-    <div className="review-container">
+    <div className="review">
       <div className="review-date">
         {new Date(review.createDate).toDateString()}
       </div>

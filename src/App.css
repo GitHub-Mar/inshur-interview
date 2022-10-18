@@ -1,19 +1,10 @@
 .App {
-  padding-top: 20vh;
-  text-align: center;
   background-color: ghostwhite;
-  height: 100%;
-}
-
-.profile {
-  display: flex;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
-}
-
-.profile-picture {
-  border-radius: 50%;
-  border: 1px;
+  display: flex;
+  align-items: center;
 }
 
 .review-toggle-button {
