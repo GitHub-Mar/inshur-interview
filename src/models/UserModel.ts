@@ -4,4 +4,6 @@ export interface UserModel {
     firstName: string;
     lastName: string;
     emailAddress: string;
+    jobTitle: string;
+    favouriteFood: string
 }

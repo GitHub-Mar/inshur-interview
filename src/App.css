@@ -1,21 +1,31 @@
 .App {
-  text-align: center;
   background-color: ghostwhite;
-  height: 100%;
-}
-
-.profile {
-  margin-top: 20vmin;
-  display: flex;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
-}
-
-.profile-picture {
-  border-radius: 50%;
-  border: 1px;
+  display: flex;
+  align-items: center;
 }
 
 .review-toggle-button {
-  margin-top: 10px;
+  background-color: #2fd190;
+  transition: 0.2s;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  margin: 10px;
+  width: 140px;
+  height: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  outline: none;
+}
+
+.review-toggle-button:hover {
+  background-color: #2ee59d;
 }

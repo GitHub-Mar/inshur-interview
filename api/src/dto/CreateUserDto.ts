@@ -12,4 +12,10 @@ export class CreateUserDto {
 
     @ApiProperty({ required: true })
     emailAddress: string;
+
+    @ApiProperty({ required: true })
+    favouriteFood: string;
+
+    @ApiProperty({ required: true })
+    jobTitle: string;
 };

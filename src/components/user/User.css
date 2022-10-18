@@ -1,10 +1,22 @@
+.profile-picture {
+  border-radius: 50%;
+  border: 1px;
+}
+
 .user-info {
-    display: flex;
-    align-items: center;    
-    justify-content: center;
-    padding-bottom: 4vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4vmin;
+}
+
+.user-property {
+  font-weight: 500;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .text-block {
-    padding-left: 10px;
+  padding-left: 10px;
 }

@@ -34,7 +34,9 @@ describe('AppController unit tests', () => {
                 username: 'testUser',
                 firstName: 'Test',
                 lastName: 'User',
-                emailAddress: 'testuser@test.com'
+                emailAddress: 'testuser@test.com',
+                jobTitle: 'Test',
+                favouriteFood: 'Test'
             }
 
             jest.spyOn(userService, 'user').mockImplementationOnce(() => Promise.resolve(mockUser));
@@ -51,7 +53,9 @@ describe('AppController unit tests', () => {
                     username: 'testUser',
                     firstName: 'Test',
                     lastName: 'User',
-                    emailAddress: 'testuser@test.com'
+                    emailAddress: 'testuser@test.com',
+                    favouriteFood: 'test',
+                    jobTitle: 'test'
                 }
             ];
 
@@ -68,7 +72,9 @@ describe('AppController unit tests', () => {
                 username: 'testUser',
                 firstName: 'Test',
                 lastName: 'User',
-                emailAddress: 'testuser@test.com'
+                emailAddress: 'testuser@test.com',
+                jobTitle: 'tester',
+                favouriteFood: 'tests'
             };
 
             const mockUser: User =
@@ -77,7 +83,9 @@ describe('AppController unit tests', () => {
                 username: dto.username,
                 firstName: dto.firstName,
                 lastName: dto.lastName,
-                emailAddress: dto.emailAddress
+                emailAddress: dto.emailAddress,
+                favouriteFood: dto.favouriteFood,
+                jobTitle: dto.jobTitle
             };
 
             jest.spyOn(userService, 'createUser').mockImplementationOnce(() => Promise.resolve(mockUser));
