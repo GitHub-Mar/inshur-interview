@@ -2,7 +2,7 @@
 
 ### Setup
 1.  Clone the repo
-1. `cd welcome-to-inshur`
+1. `cd inshur-interview`
 1. `yarn install`
 1. `yarn prisma`
 1. `yarn start`
