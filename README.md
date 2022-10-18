@@ -10,4 +10,4 @@
 1. `yarn test`
 
 ### Startup issues
-I encountered an issue when running that my prisma client wasn't generated on a fresh install when I tested that. If encountered `yarn prisma` from the workspace root directory should regenerate them. 
+I encountered an issue when where my prisma client wasn't generated with the required models on a fresh install when testing. If encountered, `yarn prisma` from the workspace root directory should regenerate them. 
